@@ -361,7 +361,7 @@ class _MainScreenState extends State<MainScreen> {
                   ),
               label: '',
             ),
-            r
+            
           ],
           currentIndex: _selectedIndex,
           selectedItemColor: Theme.of(context).primaryColor,
