@@ -14,8 +14,9 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       theme: PetAppTheme.lightTheme, // Apply the pet app theme
-      home: MainScreen(),
+      // home: MainScreen(),
       // home: const GetStartedScreen(),
+      home:  LoginScreen(), // Set the initial screen to LoginScreen
     );
   }
 }

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:petbuddy/src/screens/home/home_screen.dart';
+import 'package:petbuddy/src/screens/main_screen.dart';
 import 'package:petbuddy/theme.dart';
 
 class OTPScreen extends StatefulWidget {
@@ -236,16 +237,17 @@ class _OTPScreenState extends State<OTPScreen> {
                     SizedBox(height: screenHeight * 0.03),
                     ElevatedButton(
                       onPressed: () {
-                        // Verify OTP logic here
-                        Navigator.push(
-                              context,
-                              MaterialPageRoute(
-                                builder: (context) => HomeScreen(
-                                  
-                                ),
-                              ),
-                            );
-                      },
+                      // Verify OTP logic here (example placeholder)
+                      // For example, check if OTP is valid
+
+                          Navigator.pushAndRemoveUntil(
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) => MainScreen(),
+                            ),
+                            (Route<dynamic> route) => false, // Remove all previous routes
+                          );
+                        },
                       style: Theme.of(context).elevatedButtonTheme.style!.copyWith(
                             minimumSize: MaterialStateProperty.all(
                               Size(screenWidth * 0.9, screenHeight * 0.07),

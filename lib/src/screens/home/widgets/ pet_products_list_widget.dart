@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:petbuddy/src/screens/home/%20product_detail_screen.dart';
+import 'package:petbuddy/src/screens/home/product_detail_screen.dart';
 import 'package:petbuddy/src/screens/home/pet_products_screen.dart';
 import 'package:petbuddy/theme.dart';
 // Import the theme file containing PetAppThemeExtension

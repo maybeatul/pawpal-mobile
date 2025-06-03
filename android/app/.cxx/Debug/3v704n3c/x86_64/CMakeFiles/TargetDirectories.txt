@@ -1,0 +1,2 @@
+/Users/atul/Desktop/personal-project/petbuddy/android/app/.cxx/Debug/3v704n3c/x86_64/CMakeFiles/edit_cache.dir
+/Users/atul/Desktop/personal-project/petbuddy/android/app/.cxx/Debug/3v704n3c/x86_64/CMakeFiles/rebuild_cache.dir

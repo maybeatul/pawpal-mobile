@@ -1,0 +1,20 @@
+{
+  "buildFiles": [
+    "/Users/atul/Downloads/oremetrics/flutter/packages/flutter_tools/gradle/src/main/groovy/CMakeLists.txt"
+  ],
+  "cleanCommandsComponents": [
+    [
+      "/Users/atul/Library/Android/sdk/cmake/3.22.1/bin/ninja",
+      "-C",
+      "/Users/atul/Desktop/personal-project/petbuddy/android/app/.cxx/Debug/3v704n3c/x86_64",
+      "clean"
+    ]
+  ],
+  "buildTargetsCommandComponents": [
+    "/Users/atul/Library/Android/sdk/cmake/3.22.1/bin/ninja",
+    "-C",
+    "/Users/atul/Desktop/personal-project/petbuddy/android/app/.cxx/Debug/3v704n3c/x86_64",
+    "{LIST_OF_TARGETS_TO_BUILD}"
+  ],
+  "libraries": {}
+}

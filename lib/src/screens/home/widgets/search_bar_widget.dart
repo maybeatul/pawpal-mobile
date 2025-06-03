@@ -18,11 +18,16 @@ class SearchBarWidget extends StatelessWidget {
       controller: controller,
 onChanged: onSearchChanged,
       decoration: InputDecoration(
-        prefixIcon: Icon(
-          Icons.pets,
+        suffixIcon: Icon(
+          Icons.search,
           size: screenWidth * 0.06,
           color: Theme.of(context).primaryColor,
         ),
+        // prefixIcon: Icon(
+        //   Icons.pets,
+        //   size: screenWidth * 0.06,
+        //   color: Theme.of(context).primaryColor,
+        // ),
         hintText: 'Find a service or provider...',
         hintStyle: TextStyle(
           fontFamily: 'ComicNeue',
@@ -45,7 +50,7 @@ onChanged: onSearchChanged,
           borderRadius: BorderRadius.circular(25),
           borderSide: BorderSide(
             color: Theme.of(context).primaryColor,
-            width: 2,
+            width: 1,
           ),
         ),
       ),

@@ -470,48 +470,40 @@ class ServiceDetailScreen extends StatelessWidget {
               ),
               child: Ink(
                 decoration: BoxDecoration(
-                  gradient: LinearGradient(
-                    colors: [
-                      Theme.of(context).primaryColor,
-                      Theme.of(context).primaryColor.withOpacity(0.7),
-                    ],
-                    begin: Alignment.topLeft,
-                    end: Alignment.bottomRight,
-                  ),
-                  borderRadius: BorderRadius.circular(25),
-                  border: Border.all(
-                    color: Colors.white,
-                    width: 2,
-                  ),
-                ),
+                                            gradient: const LinearGradient(
+                                              colors: [
+                                                Color(0xFFEF6C00), // Orange
+                                                Color(0xFFFF80AB), // Pastel pink
+                                              ],
+                                              begin: Alignment.topLeft,
+                                              end: Alignment.bottomRight,
+                                            ),
+                                            borderRadius: BorderRadius.circular(20),
+                                          ),
                 child: Container(
-                  alignment: Alignment.centerLeft, // Left-align button content
-                  padding: EdgeInsets.symmetric(
-                    vertical: screenHeight * 0.015,
-                    horizontal: screenWidth * 0.06,
-                  ),
-                  child: Row(
-                    mainAxisSize: MainAxisSize.min,
-                    children: [
-                      Icon(
-                        Icons.pets,
-                        size: screenWidth * 0.05,
-                        color: Colors.white,
-                      ),
-                      SizedBox(width: screenWidth * 0.02),
-                      Text(
-                        'Book Cuddle Time!',
-                        style: Theme.of(context).textTheme.bodyMedium!.copyWith(
-                              fontSize: screenWidth * 0.04,
-                              color: Colors.white,
-                              fontFamily: 'ComicNeue',
-                              fontWeight: FontWeight.bold,
-                            ),
-                        textAlign: TextAlign.left, // Left-align text
-                      ),
-                    ],
-                  ),
-                ),
+  alignment: Alignment.center, // Center the Row within the Container
+  padding: EdgeInsets.symmetric(
+    vertical: screenHeight * 0.015,
+    horizontal: screenWidth * 0.06,
+  ),
+  child: Row(
+    mainAxisSize: MainAxisSize.min,
+    mainAxisAlignment: MainAxisAlignment.center, // Center the Text within the Row
+    children: [
+      Text(
+        'Book An Appointment',
+        style: Theme.of(context).textTheme.bodyMedium!.copyWith(
+              fontSize: screenWidth * 0.04,
+              color: Colors.white,
+              fontFamily: 'ComicNeue',
+              fontWeight: FontWeight.bold,
+            ),
+        // textAlign: TextAlign.center, // Optional: Can be removed as it's not needed
+      ),
+    ],
+  ),
+),
+              
               ),
             ).animate().fadeIn(delay: 600.ms).scale(
                   begin: const Offset(0.9, 0.9),

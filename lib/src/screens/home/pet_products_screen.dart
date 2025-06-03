@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:petbuddy/src/screens/home/%20product_detail_screen.dart';
+import 'package:petbuddy/src/screens/home/product_detail_screen.dart';
 import 'package:petbuddy/src/screens/home/widgets/search_bar_widget.dart';
 import 'package:petbuddy/src/screens/home/widgets/filter_chips_widget.dart';
 import 'package:petbuddy/theme.dart';
@@ -128,7 +128,7 @@ class _PetProductsScreenState extends State<PetProductsScreen> {
                             Navigator.push(
                               context,
                               MaterialPageRoute(
-                                builder: (context) => ProductDetailScreen(product: product),
+                                builder: (context) => ProductDetailScreen(product: product, allProducts: [])
                               ),
                             );
                           },

@@ -15,9 +15,9 @@ class ServicesSectionWidget extends StatelessWidget {
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         Text(
-          "Our Services 🐶",
+          "Our Services",
           style: Theme.of(context).textTheme.headlineMedium!.copyWith(
-                fontSize: screenWidth * 0.05,
+                fontSize: screenWidth * 0.04,
                 color: Theme.of(context).primaryColor,
                 fontFamily: 'ComicNeue',
                 fontWeight: FontWeight.bold,
