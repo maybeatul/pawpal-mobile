@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:petbuddy/src/models/services_categories.dart';
 import 'package:petbuddy/src/screens/home/widgets/services_list_widget.dart';
 
 class ServicesSectionWidget extends StatelessWidget {
-  final List<Map<String, dynamic>> services;
+  final List<ServicesCategories> services;
 
   const ServicesSectionWidget({super.key, required this.services});
 

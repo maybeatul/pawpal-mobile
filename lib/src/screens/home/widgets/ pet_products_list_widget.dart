@@ -131,7 +131,7 @@ class PetProductsListWidget extends StatelessWidget {
                     Navigator.push(
                       context,
                       MaterialPageRoute(
-                        builder: (context) => ProductDetailScreen(product: product),
+                        builder: (context) => ProductDetailScreen(product: product, allProducts: [],),
                       ),
                     );
                   },

@@ -269,6 +269,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:flutter_animate/flutter_animate.dart';
+import 'package:petbuddy/src/services/api_service.dart';
 import 'package:petbuddy/theme.dart';
 import 'otp_screen.dart';
 
@@ -523,22 +524,10 @@ class LoginScreen extends StatelessWidget {
                               final phone = _phoneController.text.trim();
                               if (phone.isNotEmpty && phone.length >= 10) {
                                 dismissKeyboard();
-                                Navigator.push(
-                                  context,
-                                  MaterialPageRoute(
-                                    builder: (context) => OTPScreen(
-                                      phoneNumber: phone,
-                                    ),
-                                  ),
-                                );
-                              } else {
-                                ScaffoldMessenger.of(context).showSnackBar(
-                                  SnackBar(
-                                    content: Text(
-                                        'Please enter a valid mobile number'),
-                                  ),
-                                );
+                                ApiService().sendOtp(phone, context);
+                                  
                               }
+                                
                             },
                             child: Text("Get OTP"),
                           )

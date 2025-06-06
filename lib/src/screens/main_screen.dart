@@ -380,7 +380,7 @@
 
 
 import 'package:flutter/material.dart';
-import 'package:petbuddy/src/screens/booking/bookings_screen.dart';
+import 'package:petbuddy/src/screens/booking/my_bookings_screen.dart';
 import 'package:petbuddy/src/screens/home/home_screen.dart';
 
 class MainScreen extends StatefulWidget {
@@ -394,7 +394,7 @@ class _MainScreenState extends State<MainScreen> {
   // List of screens to switch between (four screens)
   final List<Widget> _screens = [
     HomeScreen(),
-    const BookingsScreen(), // BookingsScreen
+    const MyBookingsScreen(), // BookingsScreen
     const Placeholder(), // ChatScreen
     const Placeholder(),
     const Placeholder(), // My Profile

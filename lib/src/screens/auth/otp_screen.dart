@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:petbuddy/src/screens/home/home_screen.dart';
 import 'package:petbuddy/src/screens/main_screen.dart';
+import 'package:petbuddy/src/services/api_service.dart';
 import 'package:petbuddy/theme.dart';
 
 class OTPScreen extends StatefulWidget {
@@ -239,14 +240,30 @@ class _OTPScreenState extends State<OTPScreen> {
                       onPressed: () {
                       // Verify OTP logic here (example placeholder)
                       // For example, check if OTP is valid
-
-                          Navigator.pushAndRemoveUntil(
-                            context,
-                            MaterialPageRoute(
-                              builder: (context) => MainScreen(),
-                            ),
-                            (Route<dynamic> route) => false, // Remove all previous routes
-                          );
+                        ApiService()
+                            .verifyOtp(
+                              widget.phoneNumber,
+                              _otpControllers.map((c) => c.text).join(),
+                              context,
+                            );
+                        //     .then((result) {
+                        //   if (result['success']) {
+                        //     // Navigate to the main screen on successful verification
+                        //     Navigator.pushReplacement(
+                        //       context,
+                        //       MaterialPageRoute(builder: (context) => MainScreen()),
+                        //     );
+                        //   } else {
+                        //     // Show error message
+                        //     ScaffoldMessenger.of(context).showSnackBar(
+                        //       SnackBar(
+                        //         content: Text(result['message'] ?? 'Verification failed'),
+                        //         backgroundColor: Colors.red,
+                        //       ),
+                        //     );
+                        //   }
+                        // });
+                        
                         },
                       style: Theme.of(context).elevatedButtonTheme.style!.copyWith(
                             minimumSize: MaterialStateProperty.all(

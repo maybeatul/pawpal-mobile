@@ -1,18 +1,17 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:petbuddy/src/models/services_categories.dart';
 import 'package:petbuddy/src/screens/services/BookingScreen.dart';
 
 class ServiceDetailScreen extends StatelessWidget {
-  final String serviceTitle;
-  final IconData serviceIcon;
-  final String serviceSvg;
+
+  final ServicesCategories service;
 
   const ServiceDetailScreen({
     super.key,
-    required this.serviceTitle,
-    required this.serviceIcon,
-    required this.serviceSvg,
+    required this.service
+   
   });
 
   @override
@@ -24,7 +23,7 @@ class ServiceDetailScreen extends StatelessWidget {
     final List<Map<String, String>> infoCards = [
       {
         'title': 'What’s the Fun?',
-        'description': 'Snuggly $serviceTitle with lots of love! 🐾',
+        'description': 'Snuggly ${service.name} with lots of love! 🐾',
         'icon': 'assets/icons/pet_happy.svg', // Replace with cute pet icon
       },
       {
@@ -58,7 +57,7 @@ class ServiceDetailScreen extends StatelessWidget {
 
     final List<Map<String, String>> faqs = [
       {
-        'question': 'What’s in $serviceTitle?',
+        'question': 'What’s in $service!.name ?',
         'answer': 'Cuddles, care, and happy pet vibes! 🐾',
       },
       {
@@ -85,7 +84,7 @@ class ServiceDetailScreen extends StatelessWidget {
           onPressed: () => Navigator.pop(context),
         ),
         title: Text(
-          serviceTitle,
+          service.name,
           style: Theme.of(context).textTheme.headlineMedium!.copyWith(
                 fontSize: screenWidth * 0.06,
                 color: Theme.of(context).primaryColor,
@@ -102,7 +101,7 @@ class ServiceDetailScreen extends StatelessWidget {
             ),
             onPressed: () {
               ScaffoldMessenger.of(context).showSnackBar(
-                SnackBar(content: Text('$serviceTitle is your pet’s favorite! 🐾')),
+                SnackBar(content: Text('${service.name} is your pet’s favorite! 🐾')),
               );
             },
           ),
@@ -123,7 +122,7 @@ class ServiceDetailScreen extends StatelessWidget {
                       width: screenWidth * 0.45,
                       height: screenWidth * 0.45,
                       child: SvgPicture.asset(
-                        serviceSvg,
+                        service.iconUrl,
                         height: screenWidth * 0.4,
                         width: screenWidth * 0.4,
                         fit: BoxFit.contain,
@@ -137,7 +136,7 @@ class ServiceDetailScreen extends StatelessWidget {
                   ),
                   SizedBox(height: screenHeight * 0.02),
                   Text(
-                    'A cuddly $serviceTitle adventure for your furry friend!',
+                    service.description,
                     style: Theme.of(context).textTheme.bodyMedium!.copyWith(
                           fontSize: screenWidth * 0.04,
                           color: Colors.grey[600],
@@ -148,7 +147,7 @@ class ServiceDetailScreen extends StatelessWidget {
                   SizedBox(height: screenHeight * 0.04),
                   // Scrollable Info Cards
                   Text(
-                    '$serviceTitle Facts',
+                    '${service.name} Facts',
                     style: Theme.of(context).textTheme.headlineMedium!.copyWith(
                           fontSize: screenWidth * 0.05,
                           color: Theme.of(context).primaryColor,
@@ -452,9 +451,9 @@ class ServiceDetailScreen extends StatelessWidget {
     context,
     MaterialPageRoute(
       builder: (context) => BookingScreen(
-        serviceTitle: serviceTitle,
-        serviceIcon: serviceIcon,
-        serviceSvg: serviceSvg,
+        serviceTitle: service.name,
+        serviceIcon: Icons.pets,
+        serviceSvg: service.iconUrl, // Use the icon URL from the service
       ),
     ),
   );

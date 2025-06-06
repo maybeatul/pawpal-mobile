@@ -121,11 +121,12 @@
 
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:petbuddy/src/models/services_categories.dart';
 import 'package:petbuddy/src/screens/services/ServiceDetailScreen.dart';
 import 'package:petbuddy/theme.dart'; // Import the theme for PetAppThemeExtension
 
 class ServicesListWidget extends StatefulWidget {
-  final List<Map<String, dynamic>> services;
+  final List<ServicesCategories> services;
 
   const ServicesListWidget({super.key, required this.services});
 
@@ -163,9 +164,10 @@ class _ServicesListWidgetState extends State<ServicesListWidget> {
               context,
               MaterialPageRoute(
                 builder: (context) => ServiceDetailScreen(
-                  serviceTitle: widget.services[index]['title'],
-                  serviceIcon: widget.services[index]['icon'],
-                  serviceSvg: widget.services[index]['svg'],
+                  service : widget.services[index],
+                  // serviceTitle: widget.services[index].name,
+                  // serviceIcon: Icons.pets, // Replace with a suitable IconData
+                  // serviceSvg: widget.services[index].iconUrl.replaceAll('.png', '.svg'), // Assuming SVG is used for icons
                 ),
               ),
             );
@@ -198,7 +200,7 @@ class _ServicesListWidgetState extends State<ServicesListWidget> {
                       ],
                     ),
                     child: SvgPicture.asset(
-                      widget.services[index]['svg'],
+                      widget.services[index].iconUrl,
                       height: screenWidth * 0.16,
                       width: screenWidth * 0.16,
                       fit: BoxFit.contain,
@@ -206,7 +208,7 @@ class _ServicesListWidgetState extends State<ServicesListWidget> {
                   ),
                   SizedBox(height: screenHeight * 0.01),
                   Text(
-                    widget.services[index]['title'],
+                    widget.services[index].name,
                     style: TextStyle(
                       fontSize: screenWidth * 0.03,
                       color: Theme.of(context).primaryColor,
